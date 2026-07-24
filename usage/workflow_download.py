@@ -82,7 +82,7 @@ def cover_option_config(option: JmOption):
     if suffix is not None:
         option.download.image.suffix = fix_suffix(suffix)
 
-    pdf_option = '是 | 本子维度合并pdf'
+    pdf_option = env('PDF_OPTION', None)
     if pdf_option and pdf_option != '否':
         call_when = 'after_album' if pdf_option == '是 | 本子维度合并pdf' else 'after_photo'
         
