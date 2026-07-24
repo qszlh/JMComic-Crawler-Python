@@ -50,12 +50,6 @@ def main():
     helper.photo_id_list = list(photo_id_set)
 
     option = get_option()
-    option.plugins['after_album'] = [
-        {
-            'plugin': Feature.export_pdf
-        }
-    ]
-
     helper.run(option)
     option.call_all_plugin('after_download')
 
