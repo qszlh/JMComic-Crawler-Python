@@ -27,6 +27,7 @@ jobs:
       JM_DOWNLOAD_DIR: /home/runner/work/jmcomic/download/
       ZIP_NAME: '本子.tar.gz'
       UPLOAD_NAME: 'Click me to download'
+      PDF_OPTION: 是
 
     steps:
       - uses: actions/checkout@v4
