@@ -1,9 +1,16 @@
 from jmcomic import *
 from jmcomic.cl import JmcomicUI
+from jmcomic import download_album, Feature
 
+# 只需要加一个 extra 参数，就能在下载完成后自动导出 PDF
+download_album('123', extra=Feature.export_pdf)
+
+# 如果要传 option 参数，就是如下写法，三个参数
+download_album('123', option, extra=Feature.export_pdf)
 # 下方填入你要下载的本子的id，一行一个，每行的首尾可以有空白字符
 jm_albums = '''
-JM1243347
+./
+├── [JM14511699]本子标题.pdf      
 
 
 '''
