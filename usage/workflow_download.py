@@ -1,9 +1,10 @@
 from jmcomic import *
+from jmcomic import Feature
 from jmcomic.cl import JmcomicUI
 
 # 下方填入你要下载的本子的id，一行一个，每行的首尾可以有空白字符
 jm_albums = '''
-JM1243347
+JM14511699
 
 
 '''
@@ -49,6 +50,12 @@ def main():
     helper.photo_id_list = list(photo_id_set)
 
     option = get_option()
+      option.plugins['after_album'] = [
+        {
+            'plugin': Feature.export_pdf
+        }
+    ]
+
     helper.run(option)
     option.call_all_plugin('after_download')
 
